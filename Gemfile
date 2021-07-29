@@ -12,11 +12,13 @@ gem 'rails', '~> 6.1.4'
 gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 5.0'
+gem 'geocoder'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'database_cleaner'
   gem 'faker'
+
   gem 'pry-rails'
   gem 'rails-controller-testing'
   gem 'rspec-rails'

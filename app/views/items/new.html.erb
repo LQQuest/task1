@@ -1,0 +1,19 @@
+<h2 style="color: #B00100; margin: 0 auto">Create new order</h2><br/>
+
+<%= form_tag items_path, method: :post do  %>
+  <%= label_tag :length %>
+  <%= text_field_tag :length %> <br/>
+  <%= label_tag :width %>
+  <%= text_field_tag :width %><br/>
+  <%= label_tag :height %>
+  <%= text_field_tag :height %><br/>
+  <%= label_tag :size %>
+  <%= text_field_tag :size %><br/>
+  <%= label_tag :weight %>
+  <%= text_field_tag :weight %><br/>
+  <%= label_tag :dispatch %>
+  <%= text_field_tag :dispatch %><br/>
+  <%= label_tag :destination %>
+  <%= text_field_tag :destination %><br/>
+  <%= submit_tag "Save", class: "btn btn-large btn-primary" %>
+<% end %>

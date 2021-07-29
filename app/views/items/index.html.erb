@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body style="background: #B0B0B0">
+<p id="notice"><%= notice %></p>
+<table class="table table-hover my-class">
+  <thead class="thead-dark">
+  <tr>
+    <th>Price</th>
+    <th>Dispatch</th>
+    <th>Destination</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @items.each do |items| %>
+    <tr>
+      <td><%= ItemsController.calculation(items.size, items.width,
+                                          items.weight, items.length,
+                                          items.height, items.dispatch,
+                                          items.destination) %></td>
+      <td><%= items.dispatch %></td>
+      <td><%= items.destination %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<br>
+</body>
+</html>
