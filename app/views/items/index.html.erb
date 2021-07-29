@@ -17,18 +17,31 @@
   </tr>
   </thead>
   <tbody>
-  <% @items.each do |items| %>
+  <% @last.each do |last| %>
     <tr>
-      <td><%= ItemsController.calculation(items.size, items.width,
-                                          items.weight, items.length,
-                                          items.height, items.dispatch,
-                                          items.destination) %></td>
-      <td><%= items.dispatch %></td>
-      <td><%= items.destination %></td>
+      <td><%= last.price %></td>
+      <td><%= last.dispatch %></td>
+      <td><%= last.destination %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
 <br>
+<table class="table table-hover my-class">
+  <thead class="thead-dark">
+  <tr>
+    <th>TOP-3</th>
+    <th>Count</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @top.sort_by {|k, v| v}.reverse.take(3).each do |top| %>
+    <tr>
+      <td><%= top[0] %></td>
+      <td><%= top[1] %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
 </body>
 </html>
