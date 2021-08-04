@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   root to: 'items#show'
-
-  resources :items, :order
+  get 'show_json', to: 'items#show_json'
+  resources :items
 end

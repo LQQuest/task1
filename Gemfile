@@ -16,12 +16,8 @@ gem 'geocoder'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'database_cleaner'
-  gem 'faker'
-
   gem 'pry-rails'
   gem 'rails-controller-testing'
-  gem 'rspec-rails'
 end
 
 group :development do
@@ -34,9 +30,7 @@ end
 
 group :test do
   gem 'capybara', '>= 3.26'
-  gem 'factory_bot_rails'
   gem 'rubocop', require: false
-  gem 'shoulda-matchers'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

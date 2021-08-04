@@ -1,5 +1,6 @@
                                   Prefix Verb   URI Pattern                                                                                       Controller#Action
-                                    root GET    /                                                                                                 items#index
+                                    root GET    /                                                                                                 items#show
+                               show_json GET    /show_json(.:format)                                                                              items#show_json
                                    items GET    /items(.:format)                                                                                  items#index
                                          POST   /items(.:format)                                                                                  items#create
                                 new_item GET    /items/new(.:format)                                                                              items#new
@@ -8,14 +9,6 @@
                                          PATCH  /items/:id(.:format)                                                                              items#update
                                          PUT    /items/:id(.:format)                                                                              items#update
                                          DELETE /items/:id(.:format)                                                                              items#destroy
-                             order_index GET    /order(.:format)                                                                                  order#index
-                                         POST   /order(.:format)                                                                                  order#create
-                               new_order GET    /order/new(.:format)                                                                              order#new
-                              edit_order GET    /order/:id/edit(.:format)                                                                         order#edit
-                                   order GET    /order/:id(.:format)                                                                              order#show
-                                         PATCH  /order/:id(.:format)                                                                              order#update
-                                         PUT    /order/:id(.:format)                                                                              order#update
-                                         DELETE /order/:id(.:format)                                                                              order#destroy
            rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                           action_mailbox/ingresses/postmark/inbound_emails#create
               rails_relay_inbound_emails POST   /rails/action_mailbox/relay/inbound_emails(.:format)                                              action_mailbox/ingresses/relay/inbound_emails#create
            rails_sendgrid_inbound_emails POST   /rails/action_mailbox/sendgrid/inbound_emails(.:format)                                           action_mailbox/ingresses/sendgrid/inbound_emails#create

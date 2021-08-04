@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  # skip_before_action :verify_authenticity_token
 
   def index
     @items = Item.all
@@ -13,12 +12,17 @@ class ItemsController < ApplicationController
                              item.weight, item.length,
                              item.height, item.dispatch,
                              item.destination)
-    item.save
     if item.persisted?
+      item.save
       redirect_to items_path
     else
       render json: item.errors, status: :unprocessable_entity
     end
+  end
+
+  def show_json
+    @last = Item.order("created_at desc").limit(1)
+    render json: @last
   end
 
   def calculation(size, width, weight, length, height, dispatch, destination)
